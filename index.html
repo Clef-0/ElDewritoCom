@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nunito:300,400" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
 <title>ElDewrito</title>
 </head>
@@ -14,13 +14,14 @@
 <li class="logo left">
 <a href="https://eldewrito.com/"></a>
 </li>
-<li class="drop left">
-<a href="about">Game</a>
+<li class="drop right">
+<a href="about">FMM</a>
 <div class="dropdown">
 <a href="download">Download</a>
+<a href="download">Mod Showcase</a>
 </div>
 </li>
-<li class="drop left">
+<li class="drop right">
 <a href="#">Community</a>
 <div class="dropdown">
 <a href="https://www.reddit.com/r/haloonline">/r/HaloOnline</a>
@@ -29,15 +30,62 @@
 <a href="http://scooterpsu.github.io/">scooterpsu.github.io</a>
 </div>
 </li>
-<li class="drop left">
-<a href="about">FMM</a>
+<li class="drop right">
+<a href="about">Game</a>
 <div class="dropdown">
 <a href="download">Download</a>
-<a href="download">Mod Showcase</a>
+<a href="download">Screenshots</a>
 </div>
 </li>
 </ul>
-<div class="hero">
+<div class="content">
+<canvas id="blurry"></canvas>
+<div class="innercontent">
+<div class="hero" id="hero-1">
+<div class="hero_text">
+<h1 class="hero_name">0.6 Announcement</h1>
+<h1 class="hero_tag">Something something soon friday</h1>
 </div>
+</div>
+</div>
+<div class="separator">
+<div class="innerseparator">
+<h1>Built by the Halo Community</h1>
+</div>
+</div>
+<div class="innercontent">
+<div class="hero-left" id="hero-2">
+<div class="hero_text">
+<h1 class="hero_name">What the fuck is an eldorito?</h1>
+<h1 class="hero_tag">Celebrate my dick you piece of shit</h1>
+</div>
+</div>
+<div class="hero-right" id="hero-3">
+<div class="hero_text">
+<h1 class="hero_name">What the fuck is an eldorito?</h1>
+<h1 class="hero_tag">Celebrate my dick you piece of shit</h1>
+</div>
+</div>
+</div>
+</div>
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stackblur-canvas/1.4.0/stackblur.min.js"></script>
+<script>
+    var canvas = document.getElementById("blurry"),
+        ctx = canvas.getContext("2d"),
+        toBlur = new Image();
+        toBlur.src = "https://eldewrito.com/img/large/02.jpg";
+
+    function drawBlur() {
+        var w = canvas.width,
+            h = canvas.height;
+        ctx.drawImage(toBlur, 0, 0, w, h);
+        stackBlurCanvasRGBA("blurry", 0, 0, w, h, 10);
+    }
+
+    toBlur.onload = function() {
+        drawBlur();
+    }
+</script>
 </body>
 </html>

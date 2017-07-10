@@ -1,16 +1,16 @@
 * {
-	font-family: 'Nunito', sans-serif;
-	font-weight: 400;
-	box-sizing: border-box;
-	transition: .25s;
-	-webkit-font-smoothing: antialiased;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
+    transition: .25s;
+    -webkit-font-smoothing: antialiased;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 body {
-	margin: 0;
-	background: #12161b;
+    margin: 0;
+    background: #121b16;
 }
 
 img {
@@ -21,7 +21,7 @@ img {
 
 .navbarbg {
     position: fixed;
-    z-index: 9;
+    z-index: 89;
     top: 0;
     left: 0;
     width: 100%;
@@ -29,22 +29,22 @@ img {
     white-space: nowrap;
     margin: 0;
     background: #1e4444 url(https://eldewrito.com/img/hero-01.jpg) no-repeat center center;
-	opacity: 0.5;
+    opacity: 0.5;
     background-size: cover;
 }
 
 .navbar {
     position: fixed;
-    z-index: 10;
+    z-index: 90;
+  margin: auto;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
+    width: 90%;
+	max-width: 1280px;
     height: 70px;
     white-space: nowrap;
-    margin: 0;
     padding: 0;
-	padding-left: 30px;
-	padding-right: 30px;
     list-style: none;
     box-shadow: 0 0 10px rgba(0,0,0,.5);
 }
@@ -62,6 +62,10 @@ li {
 
 .navbar>li.left {
     float: left;
+}
+
+.navbar>li.right {
+    float: right;
 }
 
 .navbar>li {
@@ -103,30 +107,35 @@ li {
     transform: translateY(-10px);
     opacity: 0;
     box-shadow: 0 5px 10px -2px rgba(0,0,0,.25);
-	pointer-events: none;
+    pointer-events: none;
+}
+
+.navbar .right .dropdown {
+    left: inherit;
+    right: 0;
 }
 
 .drop {
-	display: inline-block;
-	position: relative;
-	padding-bottom: 3px;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 3px;
 }
 
 .drop:after {
     z-index: 5;
-	content: '';
-	display: block;
-	margin: auto;
-	height: 3px;
-	width: 0px;
-	margin-top: -3px;
-	background: transparent;
-	transition: width .5s ease, background-color .5s ease;
+    content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0px;
+    margin-top: -3px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
 }
 
 .drop:hover:after {
-	width: 100%;
-	background: white;
+    width: 100%;
+    background: white;
 }
 
 .navbar>li:hover>a {
@@ -135,7 +144,7 @@ li {
 
 .drop:hover > .dropdown {
     opacity: 1;
-	pointer-events: inherit;
+    pointer-events: inherit;
 }
 
 .navbar .dropdown>a {
@@ -149,11 +158,148 @@ li {
     transition: .25s;
     text-decoration: none;
     text-transform: none;
-    color: #f5f5f5;
     border-bottom: 1px solid rgba(0,0,0,.1);
     background: #1e242b;
+    color: #f5f5f5;
 }
 
 .navbar .dropdown>a:hover {
-    background: #1e4444;
+    background-color: #e5e5e5;
+    color: #1e4444;
+}
+
+.content {
+    position: absolute;
+  top: 70px;
+  width: 100%;
+}
+
+.innercontent {
+	z-index: 11;
+  margin: auto;
+  right: 0;
+  left: 0;
+    width: 90%;
+	max-width: 1280px;
+}
+
+.separator {
+	width: 100%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	color: #111133;
+	background-color: #eeeeee;
+}
+
+.innerseparator {
+  margin: auto;
+  right: 0;
+  left: 0;
+    width: 90%;
+	max-width: 1280px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.separator h1 {
+	margin: 0;
+	font-size: 24px;
+}
+
+.separator p {
+	margin-bottom: 0;
+}
+
+.hero {
+    height: 500px;
+    position: relative;
+    transition: .25s;
+	overflow: hidden;
+}
+
+.hero:after, .hero-left:after, .hero-right:after {
+    z-index: 9;
+    content: "";
+    display: block;
+    position: absolute;
+    transition: .25s;
+    width: 100%;
+    height: 55%;
+    bottom: 0;
+    background: -webkit-linear-gradient(transparent, #000) left repeat;
+    background: linear-gradient(transparent, #000) left repeat; 
+}
+
+.hero-left, .hero-right {
+    width: 50%;
+    height: 500px;
+    position: relative;
+	overflow: hidden;
+}
+
+.hero-left {
+	float: left;
+}
+
+.hero-right {
+	float: right;
+}
+
+.hero_text {
+    z-index: 10;
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 26px;
+}
+
+.hero_name {
+    margin: 0px;
+    color: white;
+    font-size: 32px;
+}
+.hero_tag {
+    margin: 0px;
+    color: white;
+    font-size: 15px;
+}
+
+.hero:before, .hero-left:before, .hero-right:before {
+	z-index: 9;
+    content: "";
+    display: block;
+    position: absolute;
+    transition: .25s;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+}
+
+#hero-1:before {
+    background: #1e4444 url(https://eldewrito.com/img/large/02.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+#hero-2:before {
+    background: #1e4444 url(https://eldewrito.com/img/large/04.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+#hero-3:before {
+    background: #1e4444 url(https://eldewrito.com/img/large/07.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+#hero-1:hover:before,#hero-2:hover:before,#hero-3:hover:before {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+#blurry {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 500px;
+    opacity: .75;
 }
