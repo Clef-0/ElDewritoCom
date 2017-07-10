@@ -68,24 +68,5 @@
 </div>
 </div>
 </div>
-	
-<script src="https://cdnjs.cloudflare.com/ajax/libs/stackblur-canvas/1.4.0/stackblur.min.js"></script>
-<script>
-    var canvas = document.getElementById("blurry"),
-        ctx = canvas.getContext("2d"),
-        toBlur = new Image();
-        toBlur.src = "https://eldewrito.com/img/large/02.jpg";
-
-    function drawBlur() {
-        var w = canvas.width,
-            h = canvas.height;
-        ctx.drawImage(toBlur, 0, 0, w, h);
-        stackBlurCanvasRGBA("blurry", 0, 0, w, h, 10);
-    }
-
-    toBlur.onload = function() {
-        drawBlur();
-    }
-</script>
 </body>
 </html>
