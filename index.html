@@ -5,6 +5,7 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
+<script type="text/javascript" src="http://localhost/js/StackBlur/stackblur.js"></script>
 <title>ElDewrito</title>
 </head>
 
@@ -68,5 +69,22 @@
 </div>
 </div>
 </div>
+<script type="text/javascript">
+    var canvas = document.getElementById("blurry"),
+        ctx = canvas.getContext("2d"),
+        toBlur = new Image();
+        toBlur.src = "https://eldewrito.com/img/large/02.jpg";
+
+    function drawBlur() {
+        var w = canvas.width,
+            h = canvas.height;
+        ctx.drawImage(toBlur, 0, 0, w, h);
+        stackBlurCanvasRGBA("blurry", 0, 0, w, h, 10);
+    }
+
+    toBlur.onload = function() {
+        drawBlur();
+    }
+</script>
 </body>
 </html>

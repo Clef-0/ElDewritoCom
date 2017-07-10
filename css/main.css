@@ -31,6 +31,7 @@ img {
     background: #1e4444 url(https://eldewrito.com/img/hero-01.jpg) no-repeat center center;
     opacity: 0.5;
     background-size: cover;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
 }
 
 .navbar {
@@ -46,7 +47,6 @@ img {
     white-space: nowrap;
     padding: 0;
     list-style: none;
-    box-shadow: 0 0 10px rgba(0,0,0,.5);
 }
 
 li {
