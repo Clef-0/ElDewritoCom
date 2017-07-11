@@ -10,7 +10,7 @@
 
 body {
     margin: 0;
-    background: #121b16;
+    background: #0a0c0f;
 }
 
 img {
@@ -28,8 +28,7 @@ img {
     height: 70px;
     white-space: nowrap;
     margin: 0;
-    background: #1e4444 url(https://eldewrito.com/img/hero-01.jpg) no-repeat center center;
-    opacity: 0.5;
+    background: rgba(0,0,0,.5);
     background-size: cover;
     box-shadow: 0 0 10px rgba(0,0,0,.5);
 }
@@ -87,17 +86,21 @@ li {
 }
 
 .navbar>li.logo {
-    width: 70px;
-    background-image: url(https://eldewrito.com/img/logo-white.png);
+    width: 90px;
+    background-image: url(../img/logo-white.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto 50px;
 }
 
+.navbar>li.logo>a {
+    width: 90px;
+}
+
 .navbar .dropdown {
     position: absolute;
     z-index: 5;
-    top: 80px;
+    top: 70px;
     left: 0;
     overflow: hidden;
     width: 200px;
@@ -119,6 +122,51 @@ li {
     display: inline-block;
     position: relative;
     padding-bottom: 3px;
+}
+
+.drop > a > .label {
+    font-size: 11px;
+    line-height: 20px;
+    left: 0;
+    display: block;
+    text-align: center;
+    opacity: .5;
+    margin-top: -28px;
+
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; margin-top: -38px; color: black; }
+    to   { opacity: .5; margin-top: -28px; color: rgba(255,255,255,.8); }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; margin-top: -38px; color: black; }
+    to   { opacity: .5; margin-top: -28px; color: rgba(255,255,255,.8); }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; margin-top: -38px; color: black; }
+    to   { opacity: .5; margin-top: -28px; color: rgba(255,255,255,.8); }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; margin-top: -38px; color: black; }
+    to   { opacity: .5; margin-top: -28px; color: rgba(255,255,255,.8); }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; margin-top: -38px; color: black; }
+    to   { opacity: .5; margin-top: -28px; color: rgba(255,255,255,.8); }
 }
 
 .drop:after {
@@ -143,6 +191,8 @@ li {
 }
 
 .drop:hover > .dropdown {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
     opacity: 1;
     pointer-events: inherit;
 }
@@ -170,51 +220,130 @@ li {
 
 .content {
     position: absolute;
-  top: 70px;
   width: 100%;
 }
 
-.innercontent {
+.herowrap {
+	width: 100%;
+	overflow: hidden;
+}
+
+.innerherowrap, .innercontent {
 	z-index: 11;
-  margin: auto;
-  right: 0;
-  left: 0;
+	margin: auto;
+    right: 0;
+    left: 0;
     width: 90%;
 	max-width: 1280px;
+}
+
+.innerherowrap {
+    padding-top: 70px;
+}
+
+.innercontent{
+	overflow: hidden;
+	margin: 40px auto;
+}
+
+.innercontent>.left
+{
+	float: left;
+    width: calc(60% - 4px);
+}
+
+.innercontent>.right
+{
+	float: right;
+    width: calc(40% - 4px);
+}
+
+.innercontent>.left>div,.innercontent>.right>div
+{
+	padding: 20px 20px;
+	color: #eeeeee;
+    background: rgba(255,255,255,.05);
+	margin-bottom: 8px;
+}
+
+.contentwrap {
+	width: 100%;
+	overflow: hidden;
 }
 
 .separator {
+  position: relative;
+    z-index: 16;
 	width: 100%;
-	padding-top: 30px;
-	padding-bottom: 30px;
-	color: #111133;
+	color: #121b16;
 	background-color: #eeeeee;
 }
 
-.innerseparator {
+.footer {
+  position: relative;
+    z-index: 16;
+	width: 100%;
+	color: #eeeeee;
+	background-color: #14191e;
+	text-align: center;
+}
+.footer > .innerfooter > h1 {
+	font-weight: 200;
+	font-size: 30px;
+}
+.footer > .innerfooter > p {
+	font-weight: 300;
+	font-size: 13px;
+	margin-top: 4px;
+}
+
+.innerseparator, .innertext, .innerfooter {
   margin: auto;
+	padding: 30px 20px;
   right: 0;
   left: 0;
     width: 90%;
 	max-width: 1280px;
-	padding-left: 20px;
-	padding-right: 20px;
 }
 
-.separator h1 {
+h1 {
 	margin: 0;
 	font-size: 24px;
 }
 
-.separator p {
+p {
 	margin-bottom: 0;
 }
 
-.hero {
+#blurry, #blurry-left, #blurry-right {
+	background-color: #292526;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 634px;
+    opacity: .75;
+}
+
+#blurry-left {
+    width: 50%;
+    height: 470px;
+	left: 0;
+}
+
+#blurry-right {
+    width: 50%;
+    height: 470px;
+	right:0;
+}
+
+.hero, .hero-left, .hero-right {
+    z-index: 9;
+	margin-top: 64px;
     height: 500px;
     position: relative;
     transition: .25s;
 	overflow: hidden;
+	box-shadow: 0 3px 15px rgba(0,0,0,.2);
 }
 
 .hero:after, .hero-left:after, .hero-right:after {
@@ -224,17 +353,24 @@ li {
     position: absolute;
     transition: .25s;
     width: 100%;
-    height: 55%;
+    height: 100%;
     bottom: 0;
-    background: -webkit-linear-gradient(transparent, #000) left repeat;
-    background: linear-gradient(transparent, #000) left repeat; 
+    background: linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,0) 50%,rgba(0,0,0,1));
+	opacity: 0.8;
+	box-shadow: 0;
+}
+
+.hero:hover:after, .hero-left:hover:after, .hero-right:hover:after {
+	opacity: 1;
 }
 
 .hero-left, .hero-right {
+	margin-top: 0px;
     width: 50%;
-    height: 500px;
+    height: 400px;
     position: relative;
 	overflow: hidden;
+	box-shadow: 0;
 }
 
 .hero-left {
@@ -251,8 +387,17 @@ li {
     left: 20px;
     right: 20px;
     bottom: 26px;
+	text-align: center;
 }
 
+.hero_blue {
+	font-weight: 400;
+	letter-spacing: 2px;
+    margin: 0px;
+    color: #35b7b7;
+    font-size: 18px;
+	text-transform: uppercase;
+}
 .hero_name {
     margin: 0px;
     color: white;
@@ -275,31 +420,35 @@ li {
     bottom: 0;
 }
 
+.hero:hover {
+	cursor: pointer;
+    box-shadow: 0 3px 30px rgba(0,0,0,.6);
+}
+
 #hero-1:before {
-    background: #1e4444 url(https://eldewrito.com/img/large/02.jpg) no-repeat center center;
+    background: #1e4444 url(../img/hero04.png) no-repeat center center;
     background-size: cover;
 }
 
 #hero-2:before {
-    background: #1e4444 url(https://eldewrito.com/img/large/04.jpg) no-repeat center center;
+    background: #1e4444 url(../img/hero02.jpg) no-repeat center center;
     background-size: cover;
 }
 
 #hero-3:before {
-    background: #1e4444 url(https://eldewrito.com/img/large/07.jpg) no-repeat center center;
+    background: #1e4444 url(../img/hero03.jpg) no-repeat center center;
     background-size: cover;
 }
 
 #hero-1:hover:before,#hero-2:hover:before,#hero-3:hover:before {
-    -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-	transform: scale(1.1);
+    
 }
 
-#blurry {
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 500px;
-    opacity: .75;
+#clef_logo {
+	display: inline-block;
+	background: transparent url(../img/clef_logo.png) no-repeat center center;
+	background-size: contain;
+	height:30px;
+	width: 100px;
+	margin-bottom:20px;
 }
