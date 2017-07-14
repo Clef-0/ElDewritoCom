@@ -10,13 +10,23 @@
 
 body {
     margin: 0;
-    background: #0a0c0f;
+    background: #111519;
 }
 
 img {
     border: 0;
     -ms-interpolation-mode: bicubic;
     vertical-align: middle;
+}
+
+a:link, a:visited { 
+    color: #35b7b7;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #37cccc;
+	text-decoration: none;
 }
 
 .navbarbg {
@@ -50,13 +60,13 @@ img {
 
 li {
     display: list-item;
-    text-align: -webkit-match-parent;
-    white-space: nowrap;
 }
 
 .navbar>li {
     position: relative;
     height: 70px;
+    text-align: -webkit-match-parent;
+    white-space: nowrap;
 }
 
 .navbar>li.left {
@@ -86,7 +96,7 @@ li {
 }
 
 .navbar>li.logo {
-    width: 90px;
+    width: calc(50px + 4vw);
     background-image: url(../img/logo-white.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -94,7 +104,7 @@ li {
 }
 
 .navbar>li.logo>a {
-    width: 90px;
+	width:100%;
 }
 
 .navbar .dropdown {
@@ -124,7 +134,7 @@ li {
     padding-bottom: 3px;
 }
 
-.drop > a > .label {
+.drop > a > .pagelabel {
     font-size: 11px;
     line-height: 20px;
     left: 0;
@@ -144,29 +154,42 @@ li {
     from { opacity: 0; margin-top: -38px; color: black; }
     to   { opacity: .5; margin-top: -28px; color: rgba(255,255,255,.8); }
 }
-
-/* Firefox < 16 */
 @-moz-keyframes fadein {
     from { opacity: 0; margin-top: -38px; color: black; }
     to   { opacity: .5; margin-top: -28px; color: rgba(255,255,255,.8); }
 }
-
-/* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
     from { opacity: 0; margin-top: -38px; color: black; }
     to   { opacity: .5; margin-top: -28px; color: rgba(255,255,255,.8); }
 }
-
-/* Internet Explorer */
 @-ms-keyframes fadein {
     from { opacity: 0; margin-top: -38px; color: black; }
     to   { opacity: .5; margin-top: -28px; color: rgba(255,255,255,.8); }
 }
-
-/* Opera < 12.1 */
 @-o-keyframes fadein {
     from { opacity: 0; margin-top: -38px; color: black; }
     to   { opacity: .5; margin-top: -28px; color: rgba(255,255,255,.8); }
+}
+
+@keyframes slideup {
+    from { line-height: 70px; }
+    to   { line-height: 65px; }
+}
+@-moz-keyframes slideup {
+    from { line-height: 70px; }
+    to   { line-height: 65px; }
+}
+@-webkit-keyframes slideup {
+    from { line-height: 70px; }
+    to   { line-height: 65px; }
+}
+@-ms-keyframes slideup {
+    from { line-height: 70px; }
+    to   { line-height: 65px; }
+}
+@-o-keyframes slideup {
+    from { line-height: 70px; }
+    to   { line-height: 65px; }
 }
 
 .drop:after {
@@ -218,9 +241,42 @@ li {
     color: #1e4444;
 }
 
+h1 {
+	font-size: 24px;
+	margin-top: 16px;
+	margin-bottom: 6px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+h1:first-child { margin-top: 0px !important; }
+
+h2 {
+	font-size: 20px;
+	margin-top: 16px;
+	margin-bottom: 6px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+h2:first-child { margin-top: 0px !important; }
+
+h3 {
+	font-size: 18px;
+	margin-top: 16px;
+	margin-bottom: 6px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+h3:first-child { margin-top: 0px !important; }
+
+.herowrap h1, .herowrap h2, .herowrap h3 {
+    border-bottom: 0px;
+}
+
+p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
 .content {
     position: absolute;
-  width: 100%;
+    width: 100%;
 }
 
 .herowrap {
@@ -233,7 +289,7 @@ li {
 	margin: auto;
     right: 0;
     left: 0;
-    width: 90%;
+    width: 100%;
 	max-width: 1280px;
 }
 
@@ -241,9 +297,39 @@ li {
     padding-top: 70px;
 }
 
-.innercontent{
+.innercontent {
 	overflow: hidden;
 	margin: 40px auto;
+}
+
+.innercontent h1 {
+	font-size: 18px;
+	color: #35b7b7;
+	border-bottom: 1px solid rgba(245,245,245,.1);
+}
+
+.innercontent h2 {
+	padding-bottom:
+}
+
+.innercontent p {
+	font-weight: 300;
+}
+
+p:not(:last-child)
+{
+	margin-bottom: 6px;
+}
+
+.innercontent .readmore {
+    font-size: 15px;
+    display: block;
+    padding: 6px 0px 0;
+	margin: 0px;
+    text-decoration: none;
+    color: #35b7b7;
+	border-top: 1px solid rgba(255,255,255,.1);
+	font-weight: 600;
 }
 
 .innercontent>.left
@@ -260,15 +346,22 @@ li {
 
 .innercontent>.left>div,.innercontent>.right>div
 {
-	padding: 20px 20px;
+	padding: 32px;
 	color: #eeeeee;
-    background: rgba(255,255,255,.05);
+    background: rgba(178, 212, 255,.05);
 	margin-bottom: 8px;
+    border-top: 2px solid rgba(53, 183, 183, 0.2);
+}
+
+.innercontent>.left>div {
+    background: rgba(178, 212, 255, 0.07);
+    border-top: 2px solid rgba(53, 183, 183, 0.28);
 }
 
 .contentwrap {
 	width: 100%;
 	overflow: hidden;
+	padding: 0 2vw;
 }
 
 .separator {
@@ -297,22 +390,29 @@ li {
 	margin-top: 4px;
 }
 
-.innerseparator, .innertext, .innerfooter {
+.innerseparator, .innerfooter {
   margin: auto;
-	padding: 30px 20px;
+	padding: 30px 2vw;
   right: 0;
   left: 0;
     width: 90%;
 	max-width: 1280px;
 }
 
-h1 {
-	margin: 0;
-	font-size: 24px;
+.innerseparator h1 {
+	font-weight: 400;
+	margin-bottom: 12px;
 }
 
-p {
-	margin-bottom: 0;
+.innerseparator>.readmore {
+    font-size: 15px;
+    display: block;
+    padding: 10px 0 0;
+	margin-top: 16px;
+    text-decoration: none;
+    color: #319494;
+	border-top: 1px solid rgba(0,0,0,.1);
+	font-weight: 600;
 }
 
 #blurry, #blurry-left, #blurry-right {
@@ -357,7 +457,7 @@ p {
     bottom: 0;
     background: linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,0) 50%,rgba(0,0,0,1));
 	opacity: 0.8;
-	box-shadow: 0;
+	box-shadow: none;
 }
 
 .hero:hover:after, .hero-left:hover:after, .hero-right:hover:after {
@@ -370,7 +470,7 @@ p {
     height: 400px;
     position: relative;
 	overflow: hidden;
-	box-shadow: 0;
+	box-shadow: none;
 }
 
 .hero-left {
@@ -431,12 +531,12 @@ p {
 }
 
 #hero-2:before {
-    background: #1e4444 url(../img/hero02.jpg) no-repeat center center;
+    background: #1e4444 url(../img/hero06.jpg) no-repeat center center;
     background-size: cover;
 }
 
 #hero-3:before {
-    background: #1e4444 url(../img/hero03.jpg) no-repeat center center;
+    background: #1e4444 url(../img/hero05.jpg) no-repeat center center;
     background-size: cover;
 }
 
@@ -446,9 +546,49 @@ p {
 
 #clef_logo {
 	display: inline-block;
-	background: transparent url(../img/clef_logo.png) no-repeat center center;
+	background: transparent url(../img/clef_logo_s.png) no-repeat center center;
 	background-size: contain;
-	height:30px;
-	width: 100px;
-	margin-bottom:20px;
+	height: 35px;
+	width: 84px;
+	margin-bottom: 20px;
+}
+
+.picture_link {
+	width: 100%;
+	height: 48vw;
+}
+
+.statswrapper {
+	overflow: hidden;
+	padding-bottom: 6px;
+}
+
+.statsleft {
+	float: left;
+	width: 50%;
+}
+
+.statsright {
+	float: right;
+	width: 50%;
+}
+
+.statswrapper h3 {
+	font-size: 16px;
+	font-weight: 400;
+	width: 80%;
+	padding-top: 0px;
+	padding-bottom: 1px;
+	border-bottom: 1px solid rgba(245,245,245,.1);
+	margin-top: 0px;
+	margin-bottom: 3px;
+}
+
+#fmmname {
+	margin-bottom: 0px;
+	border-bottom: 0px;
+}
+
+#fmmver {
+	margin-top: 0px;
 }
